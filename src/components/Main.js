@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 class Main extends Component {
     constructor(props) {
         super(props);
@@ -14,23 +15,26 @@ class Main extends Component {
     }
 
     handleSubmit(event) {
-        console.log(this.state.value);
         event.preventDefault();
     }
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <label>
-                    Name:
-                    <input type="text" 
-                    value={this.state.value}
-                    onChange={this.handleChange} />
-                </label>
-                <input type="submit" value="Submit" />
-            </form>     
+            <div>
+                <form onSubmit={this.handleSubmit}>
+                    <label>
+                        Name:
+                        <input type="text" 
+                        value={this.state.value}
+                        onChange={this.handleChange} />
+                    </label>
+                    <input type="submit" value="Submit" />
+                </form>
+                <hr />
+                
+            </div>     
         );
     }
 }
 
-export default Main
+export default Main;
