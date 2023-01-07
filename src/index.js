@@ -34,7 +34,7 @@ class DisplayEmploymentExperience extends Component {
                     <li>{employmentInfo.company}</li>
                     <li>{employmentInfo.startDate}</li>
                     <li>{employmentInfo.endDate}</li>
-                    <li>{employmentInfo.whatDidYouDo[0]}</li>
+                    <li>{employmentInfo.jobRes[0]}</li>
                 </ul>
             </div>
         )
@@ -49,7 +49,7 @@ class DisplayEducation extends Component {
             <div>
                 <h3>Education</h3>
                 <ul>
-                    <li>{educationInfo.university}</li>
+                    <li>{educationInfo.school}</li>
                     <li>{educationInfo.location}</li>
                     <li>{educationInfo.degree}</li>
                     <li>{educationInfo.graduationDate}</li>
@@ -76,6 +76,193 @@ class DisplayAdditionalInfo extends Component {
     }
 }
 
+class PersonalInfoForm extends Component {
+    render() {
+        return (
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label>
+                    First Name:
+                        <input
+                            name='firstName' 
+                            type="text" 
+                        />
+                </label>
+                <br />
+                <label>
+                    Last Name:
+                        <input
+                            name='lastName' 
+                            type='text'
+                        />
+                </label>
+                <br />
+                <label>
+                    Title:
+                        <input
+                            name='title' 
+                            type='text'
+                        />
+                </label>
+                <br />     
+                <label>
+                    Email:
+                        <input
+                            name='email' 
+                            type='text'
+                        />
+                </label>
+                <br />     
+                <label>
+                    Phone Number:
+                        <input
+                            name='phoneNumber' 
+                            type='text'
+                        />
+                </label>
+            </fieldset>
+        )
+    }
+}
+
+class EmploymentExperienceForm extends Component {
+    render() {
+        return (
+            <fieldset>
+                <legend>EmploymentExperience</legend>
+                <label>
+                    Position:
+                        <input
+                            name='position' 
+                            type="text" 
+                        />
+                </label>
+                <br />
+                <label>
+                    Company:
+                        <input
+                            name='company' 
+                            type='text'
+                        />
+                </label>
+                <br />
+                <label>
+                    Start Date:
+                        <input
+                            name='startDate' 
+                            type='text'
+                        />
+                </label>
+                <br />     
+                <label>
+                    End Date:
+                        <input
+                            name='endDate' 
+                            type='text'
+                        />
+                </label>
+                <br />     
+                <label>
+                    Job Responsibilities:
+                        <input
+                            name='jobRes' 
+                            type='text'
+                        />
+                </label>
+            </fieldset>
+        )
+    }
+}
+
+class EducationForm extends Component {
+    render() {
+        return (
+            <fieldset>
+                <legend>Education</legend>
+                <label>
+                    School:
+                        <input
+                            name='school' 
+                            type="text" 
+                        />
+                </label>
+                <br />
+                <label>
+                    Location:
+                        <input
+                            name='location' 
+                            type='text'
+                        />
+                </label>
+                <br />
+                <label>
+                    Degree:
+                        <input
+                            name='degree' 
+                            type='text'
+                        />
+                </label>
+                <br />     
+                <label>
+                    Graduation Date:
+                        <input
+                            name='graduationDate' 
+                            type='text'
+                        />
+                </label>
+            </fieldset>
+        )
+    }
+}
+
+class AdditionalInfoForm extends Component {
+    render() {
+        return (
+            <fieldset>
+                <legend>Additional Information</legend>
+                <label>
+                    Languages:
+                        <input
+                            name='languages' 
+                            type="text" 
+                        />
+                </label>
+                <br />
+                <label>
+                    Courses:
+                        <input
+                            name='courses' 
+                            type='text'
+                        />
+                </label>
+                <br />
+                <label>
+                    Interests:
+                        <input
+                            name='interests' 
+                            type='text'
+                        />
+                </label>
+            </fieldset>
+        )
+    }
+}
+
+class DisplayForm extends Component {
+    render() {
+        return (
+            <form>
+                <PersonalInfoForm />
+                <EmploymentExperienceForm />
+                <EducationForm />
+                <AdditionalInfoForm />
+                <br />          
+                <button onClick={this.handleSubmit}>Submit Info</button>
+            </form> 
+        )
+    }
+}
+
 class Main extends Component {
     constructor(props) {
         super(props);
@@ -84,6 +271,8 @@ class Main extends Component {
     render() {
         return (
             <div>
+                <DisplayForm />
+                <hr /> <br /> <hr />
                 <DisplayUserInfo user={this.props.user} />
                 <DisplayEmploymentExperience user={this.props.user} />
                 <DisplayEducation user={this.props.user} />
@@ -106,10 +295,10 @@ const USER = {
         company: 'So-So Hospital',
         startDate: 'July 2013',
         endDate: 'October 2021',
-        whatDidYouDo: ["tolerated people", "ate snacks", "didn't get paid enough"]
+        jobRes: ["tolerated people", "ate snacks", "didn't get paid enough"]
     },
     education: {
-        university: 'University of Whatever',
+        school: 'University of Whatever',
         location: 'California',
         degree: 'Bachelor of Science',
         graduationDate: '2011'
