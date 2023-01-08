@@ -13,7 +13,6 @@ class DisplayUserInfo extends Component {
                 <ul>
                     <li>{userInfo.firstName}</li>
                     <li>{userInfo.lastName}</li>
-                    <li>{userInfo.title}</li>
                     <li>{userInfo.email}</li>
                     <li>{userInfo.phoneNumber}</li>
                 </ul>
@@ -96,14 +95,6 @@ class PersonalInfoForm extends Component {
                             type='text'
                         />
                 </label>
-                <br />
-                <label>
-                    Title:
-                        <input
-                            name='title' 
-                            type='text'
-                        />
-                </label>
                 <br />     
                 <label>
                     Email:
@@ -125,11 +116,11 @@ class PersonalInfoForm extends Component {
     }
 }
 
-class EmploymentExperienceForm extends Component {
+class EmploymentHistoryForm extends Component {
     render() {
         return (
             <fieldset>
-                <legend>EmploymentExperience</legend>
+                <legend>Employment History</legend>
                 <label>
                     Position:
                         <input
@@ -253,7 +244,7 @@ class DisplayForm extends Component {
         return (
             <form>
                 <PersonalInfoForm />
-                <EmploymentExperienceForm />
+                <EmploymentHistoryForm />
                 <EducationForm />
                 <AdditionalInfoForm />
                 <br />          
@@ -286,7 +277,6 @@ const USER = {
     userInfo: {
         firstName: 'Jane',
         lastName: 'Doe',
-        title: 'Nurse',
         email: 'nurse@example.com',
         phoneNumber: '555-555-5555',
     },
