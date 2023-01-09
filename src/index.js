@@ -3,20 +3,35 @@ import ReactDOM from 'react-dom/client';
 import './styles/index.css';
 //import App from './App';
 
+class DisplayHeader extends Component {
+    render() {
+        return (
+            <header>
+                <h1>CV Creator</h1>
+                <p>Put all your info into the form, submit it, and a version will display at the bottom of the page. Enjoy!</p>
+            </header>
+        );
+    }
+}
+
+class DisplayFooter extends Component {
+    render() {
+        return (
+            <footer></footer>
+        );
+    }
+}
+
 class DisplayUserInfo extends Component {
     render() {
         const userInfo = this.props.user.userInfo;
         
         return (
-            <div>
-                <h3>Personal Information</h3>
-                <ul>
-                    <li>{userInfo.firstName}</li>
-                    <li>{userInfo.lastName}</li>
-                    <li>{userInfo.email}</li>
-                    <li>{userInfo.phoneNumber}</li>
-                </ul>
-            </div>
+            <section class='personalInfo'>
+                <h2>{userInfo.firstName} {userInfo.lastName}</h2>
+                <p class='small'>{userInfo.email}</p>
+                <p class='small'>{userInfo.phoneNumber}</p>   
+            </section>
         )
     }
 }
@@ -246,8 +261,7 @@ class DisplayForm extends Component {
                 <PersonalInfoForm />
                 <EmploymentHistoryForm />
                 <EducationForm />
-                <AdditionalInfoForm />
-                <br />          
+                <AdditionalInfoForm />          
                 <button onClick={this.handleSubmit}>Submit Info</button>
             </form> 
         )
@@ -262,12 +276,15 @@ class Main extends Component {
     render() {
         return (
             <div>
+                <DisplayHeader />
                 <DisplayForm />
-                <hr /> <br /> <hr />
-                <DisplayUserInfo user={this.props.user} />
-                <DisplayEmploymentExperience user={this.props.user} />
-                <DisplayEducation user={this.props.user} />
-                <DisplayAdditionalInfo user={this.props.user} />
+                <div id='cvDisplay'>
+                    <DisplayUserInfo user={this.props.user} />
+                    <DisplayEmploymentExperience user={this.props.user} />
+                    <DisplayEducation user={this.props.user} />
+                    <DisplayAdditionalInfo user={this.props.user} />
+                </div>
+                <DisplayFooter />
             </div>
         );
     }
