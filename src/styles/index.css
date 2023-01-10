@@ -62,9 +62,13 @@ button {
   margin: 25px auto;
   width: 50%;
   height: 2rem;
-  border: 2px solid gray;
-  
+  border: 2px solid gray;  
 }
+
+.addAnother {
+  width: 25%;  
+}
+
 
 /* DISPLAY */
 #cvDisplay {

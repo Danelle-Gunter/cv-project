@@ -27,10 +27,10 @@ class DisplayUserInfo extends Component {
         const userInfo = this.props.user.userInfo;
         
         return (
-            <section class='personalInfo'>
+            <section className='personalInfo'>
                 <h2>{userInfo.firstName} {userInfo.lastName}</h2>
-                <p class='small'>{userInfo.email}</p>
-                <p class='small'>{userInfo.phoneNumber}</p>   
+                <p className='small'>{userInfo.email}</p>
+                <p className='small'>{userInfo.phoneNumber}</p>   
             </section>
         )
     }
@@ -255,12 +255,23 @@ class AdditionalInfoForm extends Component {
 }
 
 class DisplayForm extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    newForm(e) {
+        e.preventDefault();
+        <EmploymentHistoryForm />;
+    }
+
     render() {
         return (
             <form>
                 <PersonalInfoForm />
                 <EmploymentHistoryForm />
+                <button className='addAnother' onClick={this.props.newForm}>Add Another Job</button>
                 <EducationForm />
+                <button className='addAnother' type='button'>Add Another School</button>
                 <AdditionalInfoForm />          
                 <button onClick={this.handleSubmit}>Submit Info</button>
             </form> 
