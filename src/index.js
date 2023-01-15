@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom/client';
 import './styles/index.css';
-//import App from './App';
+import App from './App';
 
 class DisplayHeader extends Component {
     render() {
@@ -22,255 +22,73 @@ class DisplayFooter extends Component {
     }
 }
 
-class DisplayUserInfo extends Component {
-    render() {
-        const userInfo = this.props.user.userInfo;
+// class DisplayUserInfo extends Component {
+//     render() {
+//         const userInfo = this.props.user.userInfo;
         
-        return (
-            <section className='personalInfo'>
-                <h2>{userInfo.firstName} {userInfo.lastName}</h2>
-                <p className='small'>{userInfo.email}</p>
-                <p className='small'>{userInfo.phoneNumber}</p>   
-            </section>
-        )
-    }
-}
+//         return (
+//             <section className='personalInfo'>
+//                 <h2>{userInfo.firstName} {userInfo.lastName}</h2>
+//                 <p className='small'>{userInfo.email}</p>
+//                 <p className='small'>{userInfo.phoneNumber}</p>   
+//             </section>
+//         )
+//     }
+// }
 
-class DisplayEmploymentExperience extends Component {
-    render() {
-        const employmentInfo = this.props.user.employmentExperience;
+// class DisplayEmploymentExperience extends Component {
+//     render() {
+//         const employmentInfo = this.props.user.employmentExperience;
         
-        return (
-            <div>
-                <h3>Employment Experience</h3>
-                <ul>
-                    <li>{employmentInfo.position}</li>
-                    <li>{employmentInfo.company}</li>
-                    <li>{employmentInfo.startDate}</li>
-                    <li>{employmentInfo.endDate}</li>
-                    <li>{employmentInfo.jobRes[0]}</li>
-                </ul>
-            </div>
-        )
-    }
-}
+//         return (
+//             <div>
+//                 <h3>Employment Experience</h3>
+//                 <ul>
+//                     <li>{employmentInfo.position}</li>
+//                     <li>{employmentInfo.company}</li>
+//                     <li>{employmentInfo.startDate}</li>
+//                     <li>{employmentInfo.endDate}</li>
+//                     <li>{employmentInfo.jobRes[0]}</li>
+//                 </ul>
+//             </div>
+//         )
+//     }
+// }
 
-class DisplayEducation extends Component {
-    render() {
-        const educationInfo = this.props.user.education;
+// class DisplayEducation extends Component {
+//     render() {
+//         const educationInfo = this.props.user.education;
         
-        return (
-            <div>
-                <h3>Education</h3>
-                <ul>
-                    <li>{educationInfo.school}</li>
-                    <li>{educationInfo.location}</li>
-                    <li>{educationInfo.degree}</li>
-                    <li>{educationInfo.graduationDate}</li>
-                </ul>
-            </div>
-        )
-    }
-}
+//         return (
+//             <div>
+//                 <h3>Education</h3>
+//                 <ul>
+//                     <li>{educationInfo.school}</li>
+//                     <li>{educationInfo.location}</li>
+//                     <li>{educationInfo.degree}</li>
+//                     <li>{educationInfo.graduationDate}</li>
+//                 </ul>
+//             </div>
+//         )
+//     }
+// }
 
-class DisplayAdditionalInfo extends Component {
-    render() {
-        const additionalInfo = this.props.user.additionalInfo;
+// class DisplayAdditionalInfo extends Component {
+//     render() {
+//         const additionalInfo = this.props.user.additionalInfo;
         
-        return (
-            <div>
-                <h3>Additional Information</h3>
-                <ul>
-                    <li>{additionalInfo.languages}</li>
-                    <li>{additionalInfo.courses}</li>
-                    <li>{additionalInfo.interests[1]}</li>
-                </ul>
-            </div>
-        )
-    }
-}
-
-class PersonalInfoForm extends Component {
-    render() {
-        return (
-            <fieldset>
-                <legend>Personal Information</legend>
-                <label>
-                    First Name:
-                        <input
-                            name='firstName' 
-                            type="text" 
-                        />
-                </label>
-                <br />
-                <label>
-                    Last Name:
-                        <input
-                            name='lastName' 
-                            type='text'
-                        />
-                </label>
-                <br />     
-                <label>
-                    Email:
-                        <input
-                            name='email' 
-                            type='text'
-                        />
-                </label>
-                <br />     
-                <label>
-                    Phone Number:
-                        <input
-                            name='phoneNumber' 
-                            type='text'
-                        />
-                </label>
-            </fieldset>
-        )
-    }
-}
-
-class EmploymentHistoryForm extends Component {
-    render() {
-        return (
-            <fieldset>
-                <legend>Employment History</legend>
-                <label>
-                    Position:
-                        <input
-                            name='position' 
-                            type="text" 
-                        />
-                </label>
-                <br />
-                <label>
-                    Company:
-                        <input
-                            name='company' 
-                            type='text'
-                        />
-                </label>
-                <br />
-                <label>
-                    Start Date:
-                        <input
-                            name='startDate' 
-                            type='text'
-                        />
-                </label>
-                <br />     
-                <label>
-                    End Date:
-                        <input
-                            name='endDate' 
-                            type='text'
-                        />
-                </label>
-                <br />     
-                <label>
-                    Job Responsibilities:
-                        <input
-                            name='jobRes' 
-                            type='text'
-                        />
-                </label>
-            </fieldset>
-        )
-    }
-}
-
-class EducationForm extends Component {
-    render() {
-        return (
-            <fieldset>
-                <legend>Education</legend>
-                <label>
-                    School:
-                        <input
-                            name='school' 
-                            type="text" 
-                        />
-                </label>
-                <br />
-                <label>
-                    Location:
-                        <input
-                            name='location' 
-                            type='text'
-                        />
-                </label>
-                <br />
-                <label>
-                    Degree:
-                        <input
-                            name='degree' 
-                            type='text'
-                        />
-                </label>
-                <br />     
-                <label>
-                    Graduation Date:
-                        <input
-                            name='graduationDate' 
-                            type='text'
-                        />
-                </label>
-            </fieldset>
-        )
-    }
-}
-
-class AdditionalInfoForm extends Component {
-    render() {
-        return (
-            <fieldset>
-                <legend>Additional Information</legend>
-                <label>
-                    Languages:
-                        <input
-                            name='languages' 
-                            type="text" 
-                        />
-                </label>
-                <br />
-                <label>
-                    Courses:
-                        <input
-                            name='courses' 
-                            type='text'
-                        />
-                </label>
-                <br />
-                <label>
-                    Interests:
-                        <input
-                            name='interests' 
-                            type='text'
-                        />
-                </label>
-            </fieldset>
-        )
-    }
-}
-
-class DisplayForm extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return (
-            <form>
-                <PersonalInfoForm />
-                <EmploymentHistoryForm />
-                <EducationForm />
-                <AdditionalInfoForm />          
-                <button onClick={this.handleSubmit}>Submit Info</button>
-            </form> 
-        )
-    }
-}
+//         return (
+//             <div>
+//                 <h3>Additional Information</h3>
+//                 <ul>
+//                     <li>{additionalInfo.languages}</li>
+//                     <li>{additionalInfo.courses}</li>
+//                     <li>{additionalInfo.interests[1]}</li>
+//                 </ul>
+//             </div>
+//         )
+//     }
+// }
 
 class Main extends Component {
     constructor(props) {
@@ -281,13 +99,8 @@ class Main extends Component {
         return (
             <div>
                 <DisplayHeader />
-                <DisplayForm />
-                <div id='cvDisplay'>
-                    <DisplayUserInfo user={this.props.user} />
-                    <DisplayEmploymentExperience user={this.props.user} />
-                    <DisplayEducation user={this.props.user} />
-                    <DisplayAdditionalInfo user={this.props.user} />
-                </div>
+                <App user={USER}/>
+                
                 <DisplayFooter />
             </div>
         );
@@ -321,6 +134,13 @@ const USER = {
     }
 }
 
+
+// <div id='cvDisplay'>
+// <DisplayUserInfo user={this.props.user} />
+// <DisplayEmploymentExperience user={this.props.user} />
+// <DisplayEducation user={this.props.user} />
+// <DisplayAdditionalInfo user={this.props.user} />
+// </div>
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Main user={USER} />);
