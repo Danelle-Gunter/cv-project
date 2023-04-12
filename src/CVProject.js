@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import DisplayUserInfo from './resumeDisplay';
 
 const CVProject = () => {
 
@@ -11,9 +12,7 @@ const CVProject = () => {
     const [info, setInfo] = useState([]);
 
     const handleChange = (e) => {
-        const name = e.target.name;
-        const value = e.target.value;
-        setUser({...user, [name]:value});
+        setUser({...user, [e.target.name]:e.target.value});
     };
 
     const handleSubmit = (e) => {
@@ -24,28 +23,9 @@ const CVProject = () => {
         }
     };
 
-    const DisplayUserInfo = () => {        
-        return (
-            <section>
-            {info.map((data) => {
-                const {id, fullName, email, phoneNumber} = data;
-                return (
-                    <article className='personalInfo' key={id}>
-                        <h2>{fullName}</h2>
-                        <ul>
-                            <li className='small'>{email}</li>
-                            <li className='small'>{phoneNumber}</li>   
-                        </ul>
-                    </article>
-                )
-            })}
-            </section>
-        )
-    }
-
     return (
-        <article>
-            <form>
+        <main>
+            <form onSubmit={handleSubmit}>
                 <fieldset>    
                 <legend>Personal Information</legend>                
                     <label htmlFor='fullName'>Full Name:
@@ -75,11 +55,52 @@ const CVProject = () => {
                         onChange={handleChange} 
                     /></label>
                 </fieldset>
-            
-                <button type='submit' onClick={handleSubmit}>Submit Info</button>
+                <fieldset>
+                <legend>Employment History</legend>
+                    <label>
+                        Position:
+                            <input
+                                name='position' 
+                                type="text" 
+                            />
+                    </label>
+                    <br />
+                    <label>
+                        Company:
+                            <input
+                                name='company' 
+                                type='text'
+                            />
+                    </label>
+                    <br />
+                    <label>
+                        Start Date:
+                            <input
+                                name='startDate' 
+                                type='text'
+                            />
+                    </label>
+                    <br />     
+                    <label>
+                        End Date:
+                            <input
+                                name='endDate' 
+                                type='text'
+                            />
+                    </label>
+                    <br />     
+                    <label>
+                        Job Responsibilities:
+                            <input
+                                name='jobRes' 
+                                type='text'
+                            />
+                    </label>
+                </fieldset>
+                <button type='submit'>Submit Info</button>
             </form>
-            <DisplayUserInfo />
-        </article>
+            <DisplayUserInfo info={info}/>
+        </main>
     );
 };
 
