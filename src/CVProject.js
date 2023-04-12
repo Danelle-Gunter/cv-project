@@ -6,7 +6,7 @@ const CVProject = () => {
     const [user, setUser] = useState({
         fullName:'',
         email:'',
-        phoneNumber:''
+        phoneNumber:'',
     });
 
     const [info, setInfo] = useState([]);
@@ -57,45 +57,33 @@ const CVProject = () => {
                 </fieldset>
                 <fieldset>
                 <legend>Employment History</legend>
-                    <label>
-                        Position:
-                            <input
-                                name='position' 
-                                type="text" 
-                            />
-                    </label>
+                    <label htmlFor='position'>Position:
+                    <input
+                        type="text" 
+                        id='position' 
+                        name='position'    
+                    /></label>
                     <br />
-                    <label>
-                        Company:
-                            <input
-                                name='company' 
-                                type='text'
-                            />
-                    </label>
+                    <label htmlFor='company'>Company:
+                    <input
+                        type='text'
+                        id='company'
+                        name='company' 
+                    /></label>
                     <br />
-                    <label>
-                        Start Date:
-                            <input
-                                name='startDate' 
-                                type='text'
-                            />
-                    </label>
+                    <label htmlFor='startDate'>Start Date:
+                    <input
+                        type='text'
+                        id='startDate'
+                        name='startDate' 
+                    /></label>
                     <br />     
-                    <label>
-                        End Date:
-                            <input
-                                name='endDate' 
-                                type='text'
-                            />
-                    </label>
-                    <br />     
-                    <label>
-                        Job Responsibilities:
-                            <input
-                                name='jobRes' 
-                                type='text'
-                            />
-                    </label>
+                    <label htmlFor='endDate'>End Date:
+                    <input
+                        type='text'
+                        id='endDate'
+                        name='endDate' 
+                    /></label>
                 </fieldset>
                 <button type='submit'>Submit Info</button>
             </form>
